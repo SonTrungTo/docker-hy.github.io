@@ -1,0 +1,13 @@
+version: '3.5'
+services: 
+  coursematerial:
+    image: 011092295y/docker-hy.github.io
+    ports: 
+      - 4000:80
+    container_name: coursematerial
+  
+  watchtower:
+    image: containrrr/watchtower
+    volumes: 
+      - /var/run/docker.sock:/var/run/docker.sock
+    container_name: watchtower
